@@ -44,21 +44,21 @@ RSpec.describe Post, type: :model do
   end
   after { subject.save }
 
-  let(:user_1) { User.create(name: 'Nelson', posts_counter: 0) }
-  let(:post_1) { Post.create(author: user_1, title: 'This is a title', likes_counter: 0, comments_counter: 0) }
+  let(:user_one) { User.create(name: 'Nelson', posts_counter: 0) }
+  let(:post_one) { Post.create(author: user_one, title: 'This is a title', likes_counter: 0, comments_counter: 0) }
 
-  it 'last_three_post methods should return the last 5 Posts related to the user' do
-    Comment.create(text: 'This is the comment #0', post: post_1, author: user_1)
-    Comment.create(text: 'This is the comment #1', post: post_1, author: user_1)
-    Comment.create(text: 'This is the comment #2', post: post_1, author: user_1)
-    Comment.create(text: 'This is the comment #3', post: post_1, author: user_1)
-    Comment.create(text: 'This is the comment #4', post: post_1, author: user_1)
-    Comment.create(text: 'This is the comment #5', post: post_1, author: user_1)
-    expect(post_1.last_five_comments.length).to equal(5)
+  it 'last_five comments methods should return the last 5 comments related to the post' do
+    Comment.create(text: 'This is the comment #0', post: post_one, author: user_one)
+    Comment.create(text: 'This is the comment #1', post: post_one, author: user_one)
+    Comment.create(text: 'This is the comment #2', post: post_one, author: user_one)
+    Comment.create(text: 'This is the comment #3', post: post_one, author: user_one)
+    Comment.create(text: 'This is the comment #4', post: post_one, author: user_one)
+    Comment.create(text: 'This is the comment #5', post: post_one, author: user_one)
+    expect(post_one.last_five_comments.length).to equal(5)
   end
 
   it 'update_post_counter methods should increment user posts_counter by one' do
-    Post.create(author: user_1, title: 'This is a title', likes_counter: 0, comments_counter: 0)
-    expect(user_1.posts_counter).to equal(1)
+    Post.create(author: user_one, title: 'This is a title', likes_counter: 0, comments_counter: 0)
+    expect(user_one.posts_counter).to equal(1)
   end
 end

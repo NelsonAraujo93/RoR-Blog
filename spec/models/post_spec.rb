@@ -15,6 +15,15 @@ RSpec.describe Post, type: :model do
     expect(subject).to be_valid
   end
 
+  it 'title should be present, expected true' do
+    t = 'This must be a very long text to test the max length of a post it is supouse to be less than 250'
+    t1 = 'character, for that i am goint to improvise some custom text, and this test'
+    t2 = 'must be false because we are passing rigth know the 200 hundred characters and we are '
+    t3 = 'close to our goal, Yes we did it!!!'
+    subject.title = t + t1 + t2 + t3
+    expect(subject).to_not be_valid
+  end
+
   it 'likes_counter has to be greater or equal to 0, expected false' do
     subject.likes_counter = nil
     expect(subject).to_not be_valid

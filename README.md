@@ -10,14 +10,12 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -60,14 +58,6 @@
 - **ROR**
 - **Linters usage**
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-> Coming soon
-
-<!-- - [Live Demo Link](https://google.com)
--->
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
@@ -118,15 +108,8 @@ To run the project, execute the following command:
 To run tests, run the following command:
 
 ```sh
-  rspec spec/
+  rspec
 ```
-
-### Run tests
-
-To run tests, run the following command:
-
-> Coming soon
-
 <!--
 Example command:
 
@@ -134,20 +117,6 @@ Example command:
   bin/rails test test/models/article_test.rb
 ```
 --->
-
-### Deployment
-
-You can deploy this project using:
-
-> Coming soon
-
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

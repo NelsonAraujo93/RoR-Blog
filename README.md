@@ -51,12 +51,11 @@
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
-
-> Describe between 1-3 key features of the application.
-
 - **ORM**
 - **ROR**
 - **Linters usage**
+- **Test with Rspec**
+- **MVC**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -134,7 +133,6 @@ Example command:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - **Fully functional UI**
-- **Controller implementation**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

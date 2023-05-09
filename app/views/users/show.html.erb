@@ -12,16 +12,23 @@
   </div>
   <div class="posts-container">
     <% @posts.each do |post| %>
-      <card class="post-item">
-        <div class="post-data">
-          <h2>Post <%= post.id %></h2>
-          <p> <%= post.text %> </p>
-          <div class="counter-data">
-            <h5 class="custom-card-p">Comments: <%= post.comments_counter %> </h5>
-            <h5 class="custom-card-p">Likes: <%= post.likes_counter %> </h5>
+      <%= link_to "/users/#{@user.id}/posts/#{post.id}", remote: false do %>
+        <card class="post-item">
+          <div class="post-data">
+            <h2>Post <%= post.id %></h2>
+            <p> <%= post.text %> </p>
+            <div class="counter-data">
+              <h5 class="custom-card-p">Comments: <%= post.comments_counter %> </h5>
+              <h5 class="custom-card-p">Likes: <%= post.likes_counter %> </h5>
+            </div>
           </div>
-        </div>
-      </card>
+        </card>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="main-btn">
+    <%= link_to "/users/#{@user.id}/posts", remote: false do %>
+      <p>See all posts </p>
     <% end %>
   </div>
 </section>

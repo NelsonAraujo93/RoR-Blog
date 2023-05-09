@@ -13,3 +13,146 @@
  *= require_tree .
  *= require_self
  */
+img {
+  height: 100px;
+  width: 100px;
+}
+
+section.home-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  max-width: 1300px;
+}
+
+card.user-item {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-data {
+  display: flex;
+  border: 1px solid black;
+  width: 400px;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.users-container {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.custom-card-t {
+  align-self: flex-end;
+  margin: 0;
+}
+
+section.user-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.post-comment-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 520px;
+}
+
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  max-width: 1300px;
+  width: 520px;
+}
+
+card.post-item {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.post-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.post-data h2 {
+  margin: 0;
+}
+
+.counter-data {
+  display: flex;
+  align-self: flex-end;
+  gap: 12px;
+}
+
+.counter-data h5 {
+  margin: 0;
+}
+
+.bio-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 100%;
+  max-width: 520px;
+  box-sizing: border-box;
+  padding: 15px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.comments-box {
+  border: 1px solid black;
+  width: 520px;
+  height: auto;
+  max-width: 520px;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+p {
+  margin: 0;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.post-data-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  gap: 40px;
+}
+

@@ -14,7 +14,7 @@ RSpec.describe 'Users', type: :request do
 
     it 'Test if /users is loading correctly the body' do
       get '/users'
-      expect(response.body).to include('This is a list of users')
+      expect(response.body).to include('Welcome to RoR')
     end
   end
 
@@ -34,7 +34,7 @@ RSpec.describe 'Users', type: :request do
     it 'Test if /users/:id is loading correctly the body' do
       user = User.create(name: 'Nelson', posts_counter: 0)
       get "/users/#{user.id}"
-      expect(response.body).to include('Here is detail view from a given user')
+      expect(response.body).to include('Nelson')
     end
   end
 end

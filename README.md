@@ -51,10 +51,11 @@
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
-
 - **ORM**
 - **ROR**
 - **Linters usage**
+- **Test with Rspec**
+- **MVC**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -66,12 +67,12 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-> You need the following tools be installed in your computer:
+You need the following tools be installed in your computer:
 
-> - [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
-> - [Ruby](https://github.com/microverseinc/curriculum-ruby/blob/main/simple-ruby/articles/ruby_installation_instructions.md)
-> - IDE
-> - progreSql
+- [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
+- [Ruby](https://github.com/microverseinc/curriculum-ruby/blob/main/simple-ruby/articles/ruby_installation_instructions.md)
+- IDE
+- progreSql
 
 ### Setup
 
@@ -132,7 +133,6 @@ Example command:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - **Fully functional UI**
-- **Controller implementation**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -26,7 +26,7 @@ class PostsController < ApplicationController
     @new_post.comments_counter = 0
     respond_to do |format|
       if @new_post.save
-        format.html { redirect_to "/users/#{current_user.id}/posts", notice: "Post was successfully created." }
+        format.html { redirect_to "/users/#{current_user.id}/posts", notice: 'Post was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -39,7 +39,10 @@ class PostsController < ApplicationController
     @new_comment.post = Post.find(params[:id])
     respond_to do |format|
       if @new_comment.save
-        format.html { redirect_to "/users/#{params[:user_id]}/posts/#{params[:id]}", notice: "Comment was successfully created." }
+        format.html do
+          redirect_to "/users/#{params[:user_id]}/posts/#{params[:id]}",
+                      notice: 'Comment was successfully created.'
+        end
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -50,7 +53,7 @@ class PostsController < ApplicationController
     @new_like = Like.new(author: current_user, post: Post.find(params[:id]))
     respond_to do |format|
       if @new_like.save
-        format.html { redirect_to "/users/#{params[:user_id]}/posts/#{params[:id]}", notice: "Like it!" }
+        format.html { redirect_to "/users/#{params[:user_id]}/posts/#{params[:id]}", notice: 'Like it!' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end

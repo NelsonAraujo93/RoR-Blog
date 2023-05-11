@@ -4,7 +4,7 @@
       <card class="post-item">
         <div class="post-data-main">
           <div class="post-header">
-            <p>Post <%= @post.id %> by <%= @post.author.name %> </p>
+            <h4><%= @post.title %> by <%= @post.author.name %> </h4>
             <div class="counter-data">
               <h5 class="custom-card-p">Comments: <%= @post.comments_counter %> </h5>
               <h5 class="custom-card-p">Likes: <%= @post.likes_counter %> </h5>
@@ -13,6 +13,13 @@
           <p> <%= @post.text %> </p>
         </div>
       </card>
+      <% unless @like_state %>
+        <%= form_with(url: "/users/#{@post.author_id}/posts/#{@post.id}/add_like", method: :post) do |form| %>
+          <div >
+            <%= form.submit 'Like', :class => "main-btn" %>
+          </div>
+        <% end %>
+      <% end %>
       <div class="comments-box">
         <% if @post.comments.empty? %>
           <p> There are no comments for this post </p>
@@ -21,6 +28,13 @@
           <p> <%= comment.author.name %>: <%= comment.text %> </p>
         <% end %>
       </div>
+      <%= form_with url: "/users/#{@post.author_id}/posts/#{@post.id}/add_comment", method: :post, :class => 'main-form', local: true, scope: :comment do |f| %>
+        <div class="input-container">
+          <p>Add a comment:</p>
+          <%= f.text_area :text,  :maxlength => 250 %>
+        </div>
+        <%= f.submit "Send", :class => 'main-btn'%>
+      <% end %>
     </div>
   </div>
 </section>

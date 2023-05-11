@@ -24,6 +24,10 @@ img {
   width: 100px;
 }
 
+h4 {
+  margin: 0;
+}
+
 section.home-container {
   display: flex;
   flex-direction: column;
@@ -54,6 +58,8 @@ card.user-item {
   flex-direction: column;
   gap: 26px;
   width: 100%;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .custom-card-t {
@@ -74,6 +80,7 @@ section.user-container {
   flex-direction: column;
   gap: 10px;
   width: 100%;
+  align-items: center;
 }
 
 .posts-container {
@@ -136,6 +143,7 @@ card.post-item {
   height: auto;
   box-sizing: border-box;
   padding: 15px;
+  margin-bottom: 60px;
 }
 
 p {
@@ -177,10 +185,43 @@ a {
   align-items: center;
   text-align: center;
   box-shadow: 3px 3px black;
+  cursor: pointer;
+  background: white;
 }
 
 .main-btn a {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.input-container {
+  width: 100%;
+}
+
+input#post_title {
+  height: 28px;
+  width: 100%;
+  border: 2px solid black;
+  margin-top: 8px;
+  margin-bottom: 14px;
+}
+
+textarea {
+  min-height: 100px;
+  width: 100%;
+  border: 2px solid black;
+  margin-top: 8px;
+  margin-bottom: 14px;
+  resize: none;
+}
+
+form.main-form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
 }

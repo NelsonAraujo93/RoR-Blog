@@ -55,6 +55,11 @@ RSpec.describe User, type: :system do
       sleep(2)
       expect(page.find("img")['src']).to have_content subject.photo
     end
+    it 'shows the rendering the username of the user' do
+      visit "/users/#{subject.id}"
+      sleep(2)
+      expect(page).to have_content(subject.name)
+    end
   end
 
   it 'name should be present, expected false' do

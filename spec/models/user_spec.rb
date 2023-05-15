@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :system do
-  subject { User.new(name: 'Nelson', posts_counter: 2, photo:'https://picsum.photos/300/300') }
-  let(:kender) {User.new(name: 'Kender', posts_counter: 0, photo:'https://picsum.photos/300/300')}
+  subject { User.new(name: 'Nelson', posts_counter: 2, photo:'https://picsum.photos/300/300',bio:'Nelson bio') }
+  let(:kender) {User.new(name: 'Kender', posts_counter: 0, photo:'https://picsum.photos/300/300',bio:'Kender bio')}
   before { subject.save }
   before { kender.save }
   describe 'index page' do
@@ -67,6 +67,12 @@ RSpec.describe User, type: :system do
       visit "/users/#{subject.id}"
       sleep(2)
       expect(page.find(".custom-card-t")).to have_content subject.posts_counter.to_s
+    end
+
+    it 'should render the  bio of the user' do
+      visit "/users/#{subject.id}"
+      sleep(2)
+      expect(page.find(".bio")).to have_content subject.bio.to_s
     end
   end
 

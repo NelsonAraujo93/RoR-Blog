@@ -3,8 +3,15 @@ require 'rails_helper'
 RSpec.describe User, type: :system do
   subject { User.new(name: 'Nelson', posts_counter: 2, photo:'https://picsum.photos/300/300',bio:'Nelson bio') }
   let(:kender) {User.new(name: 'Kender', posts_counter: 0, photo:'https://picsum.photos/300/300',bio:'Kender bio')}
+  let(:post_1) { Post.new(author: subject, title: 'This is a title', likes_counter: 0, comments_counter: 0) }
+  let(:post_2) { Post.new(author: subject, title: 'This is a title', likes_counter: 0, comments_counter: 0) }
+  let(:post_3) { Post.new(author: subject, title: 'This is a title', likes_counter: 0, comments_counter: 0) }
+
   before { subject.save }
   before { kender.save }
+  before {post_1.save}
+  before {post_2.save}
+  before {post_3.save}
   describe 'index page' do
     it 'shows the rendering of user Kender name' do
       visit '/'
@@ -73,6 +80,12 @@ RSpec.describe User, type: :system do
       visit "/users/#{subject.id}"
       sleep(2)
       expect(page.find(".bio")).to have_content subject.bio.to_s
+    end
+
+    it 'should render the  3 first posts of the user' do
+      visit "/users/#{subject.id}"
+      sleep(2)
+      expect(page).to have_selector('.post-item', count: 3)
     end
   end
 

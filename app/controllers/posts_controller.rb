@@ -6,7 +6,8 @@ class PostsController < ApplicationController
 
   def show
     @like_state = false
-    @post = Post.find(params[:id])
+    @post = Post.includes({comments: :author},:likes, :author).find(params[:id])
+    @author =  @post.author
     @post.likes.each do |like|
       @like_state = like.author_id == current_user.id
     end

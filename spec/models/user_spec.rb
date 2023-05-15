@@ -49,6 +49,13 @@ RSpec.describe User, type: :system do
       expect(page).to have_current_path("/users/#{kender.id}", ignore_query: true) # Verify the redirection to user show page
     end
   end
+  describe 'show page' do
+    it "should display the user's profile picture." do
+      visit "/users/#{subject.id}"
+      sleep(2)
+      expect(page.find("img")['src']).to have_content subject.photo
+    end
+  end
 
   it 'name should be present, expected false' do
     subject.name = nil

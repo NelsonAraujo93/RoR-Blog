@@ -1,13 +1,13 @@
 class PostsController < ApplicationController
   def index
-    @user = User.includes({posts: {comments: :author} }).find(params[:user_id])
+    @user = User.includes({ posts: { comments: :author } }).find(params[:user_id])
     @posts = @user.posts
   end
 
   def show
     @like_state = false
-    @post = Post.includes({comments: :author}, :likes, :author).find(params[:id])
-    @author =  @post.author
+    @post = Post.includes({ comments: :author }, :likes, :author).find(params[:id])
+    @author = @post.author
     @post.likes.each do |like|
       @like_state = like.author_id == current_user.id
     end

@@ -123,9 +123,15 @@ Example command:
 
 ## 👥 Authors <a name="authors"></a>
 
+👤 **Kender Romain**
+
+- GitHub: [@Kensteph](https://github.com/kensteph)
+- Twitter: [@RomainKender](https://twitter.com/RomainKender)
+- LinkedIn: [kender-romain8788](https://www.linkedin.com/in/kender-romain8788/)
+
 👤 **Nelson Araujo**
 
-- GitHub: [@luis-pomare](https://github.com/NelsonAraujo93)
+- GitHub: [@NelsonAraujo93](https://github.com/NelsonAraujo93)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/nelson-araujo-paredes/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

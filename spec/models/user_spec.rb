@@ -93,6 +93,15 @@ RSpec.describe User, type: :system do
       sleep(2)
       expect(page).to have_content 'See all posts'
     end
+
+    it 'should render a button that lets me view all the posts of the user' do
+      visit "/users/#{subject.id}"
+      sleep(2)
+      find("#show-post-#{post_1.id}").click # Click on the shoew link
+      expect(page).to have_current_path("/users/#{subject.id}/posts/#{post_1.id}", ignore_query: true) # Verify the redirection to user show page
+    end
+
+
   end
 
   it 'name should be present, expected false' do

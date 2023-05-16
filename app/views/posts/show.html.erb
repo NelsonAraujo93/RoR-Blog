@@ -25,7 +25,7 @@
           <p> There are no comments for this post </p>
         <% end %>
         <% @post.comments.each do |comment| %>
-          <p> <%= comment.author.name %>: <%= comment.text %> </p>
+          <p id='comment-<%= comment.id%>'> <%= comment.author.name %>: <%= comment.text %> </p>
         <% end %>
       </div>
       <%= form_with url: "/users/#{@post.author_id}/posts/#{@post.id}/add_comment", method: :post, :class => 'main-form', local: true, scope: :comment do |f| %>

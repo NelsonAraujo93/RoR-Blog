@@ -57,8 +57,8 @@ RSpec.describe User, type: :system do
     end
   end
 
-  # SHOW PAGE
-  describe 'show page' do
+  # USER SHOW PAGE
+  describe 'User show page' do
     it "should display the user's profile picture." do
       visit "/users/#{subject.id}"
       sleep(2)
@@ -86,6 +86,12 @@ RSpec.describe User, type: :system do
       visit "/users/#{subject.id}"
       sleep(2)
       expect(page).to have_selector('.post-item', count: 3)
+    end
+
+    it 'should render a button that lets me view all the posts of the user' do
+      visit "/users/#{subject.id}"
+      sleep(2)
+      expect(page).to have_content 'See all posts'
     end
   end
 

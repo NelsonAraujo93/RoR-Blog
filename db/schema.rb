@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_03_200455) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_03_163527) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "author_id", null: false
     t.bigint "post_id", null: false
+    t.bigint "author_id", null: false
     t.string "text"
     t.index ["author_id"], name: "index_comments_on_author_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
@@ -27,8 +27,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_03_200455) do
   create_table "likes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "post_id", null: false
     t.bigint "author_id", null: false
+    t.bigint "post_id", null: false
     t.index ["author_id"], name: "index_likes_on_author_id"
     t.index ["post_id"], name: "index_likes_on_post_id"
   end

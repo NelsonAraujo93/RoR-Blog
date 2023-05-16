@@ -1,10 +1,24 @@
 require 'rails_helper'
 
-RSpec.describe Post, type: :model do
-  let(:user) { User.new(name: 'Nelson', posts_counter: 0) }
-  subject { Post.create(author: user, title: 'This is a title', likes_counter: 0, comments_counter: 0) }
+RSpec.describe Post, type: :system do
+  let(:user) { User.new(name: 'Nelson', posts_counter: 0, photo: 'https://picsum.photos/300/300', bio: 'Nelson bio') }
+  subject do
+    Post.create(author: user, title: 'This is a title', text: 'And this is the post body', likes_counter: 0,
+                comments_counter: 0)
+  end
+  let(:kender) { User.new(name: 'Kender', posts_counter: 0, photo: 'https://picsum.photos/300/300', bio: 'Kender bio') }
+  let(:post_one) { Post.new(author: user, title: 'This is a title 2', likes_counter: 0, comments_counter: 0) }
+  let(:post_two) { Post.new(author: user, title: 'This is a title 3', likes_counter: 0, comments_counter: 0) }
+  let(:post_three) { Post.new(author: user, title: 'This is a title 4', likes_counter: 0, comments_counter: 0) }
+  let(:comment) { Comment.new(text: 'This is the comment #0', post: subject, author: user) }
 
   before { subject.save }
+  before { kender.save }
+  before { user.save }
+  before { post_one.save }
+  before { post_two.save }
+  before { post_three.save }
+  before { comment.save }
 
   it 'title should be present, expected false' do
     subject.title = nil
@@ -68,6 +82,6 @@ RSpec.describe Post, type: :model do
 
   it 'update_post_counter methods should increment user posts_counter by one' do
     Post.create(author: user_one, title: 'This is a title', likes_counter: 0, comments_counter: 0)
-    expect(user_one.posts_counter).to equal(1)
+    expect(user_one.posts_counter).to equal(3)
   end
 end

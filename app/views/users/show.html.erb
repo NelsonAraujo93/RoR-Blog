@@ -27,7 +27,7 @@
     <% end %>
   </div>
   <div class="main-btn">
-    <%= link_to "/users/#{@user.id}/posts", remote: false do %>
+    <%= link_to "/users/#{@user.id}/posts",:id => 'all-posts', remote: false do %>
       <p>See all posts </p>
     <% end %>
   </div>

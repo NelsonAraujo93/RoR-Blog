@@ -16,7 +16,7 @@
       <% unless @like_state %>
         <%= form_with(url: "/users/#{@post.author_id}/posts/#{@post.id}/add_like", method: :post) do |form| %>
           <div >
-            <%= form.submit 'Like', :class => "main-btn" %>
+            <%= form.submit 'Like', :class => "second-btn" %>
           </div>
         <% end %>
       <% end %>
@@ -33,7 +33,7 @@
           <p>Add a comment:</p>
           <%= f.text_area :text,  :maxlength => 250 %>
         </div>
-        <%= f.submit "Send", :class => 'main-btn'%>
+        <%= f.submit "Send", :class => 'second-btn'%>
       <% end %>
     </div>
   </div>

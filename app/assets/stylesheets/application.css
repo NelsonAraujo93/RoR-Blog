@@ -67,7 +67,11 @@ card.user-item {
   margin: 0;
 }
 
-section.user-container {
+section.change-pass,
+section.forget,
+section.login,
+section.user-container,
+section.user-new {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -175,6 +179,14 @@ a {
   cursor: pointer;
 }
 
+.forget a,
+.change-pass a,
+.user-new a,
+.login a {
+  text-align: center;
+  color: rgb(79, 110, 205);
+}
+
 .main-btn {
   height: 50px;
   width: 200px;
@@ -187,6 +199,7 @@ a {
   box-shadow: 3px 3px black;
   cursor: pointer;
   background: white;
+  margin: 0 auto;
 }
 
 .main-btn a {
@@ -201,7 +214,7 @@ a {
   width: 100%;
 }
 
-input#post_title {
+.input-container input {
   height: 28px;
   width: 100%;
   border: 2px solid black;
@@ -224,4 +237,39 @@ form.main-form {
   flex-direction: column;
   width: 100%;
   max-width: 800px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  font-family: system-ui;
+  font-size: 14px;
+  border: 0;
+  cursor: pointer;
+  align-self: center;
+}
+
+input[type="submit"].second-btn {
+  width: 200px;
+  height: 50px;
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 3px 3px black;
+  cursor: pointer;
+  background: white;
+  margin: 0 auto;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.actions.main-btn {
+  width: 100%;
+  height: 30px;
 }
